@@ -1,0 +1,45 @@
+<input type="number" class="form-control" id="val" placeholder="Enter Pin Code of the User" #id style="width: 600px;margin-top:30px;margin-left: 250px;">
+<br/>
+<button  class="btn btn-primary" (click)="getValue(id.value)" style="margin-left: 300px;width: 500px;margin-top:20px;padding: 7px;font-weight: bold;font-size: 21px;"><img src="assets/images/se3.png" width="50" height="50">&nbsp;&nbsp;Search User By Pin Code</button>
+<br/>
+<br/>
+<div [hidden]="b" class="alert alert-success" style="margin-left: 200px;width: 700px;margin-top: 10px;font-size: 25px;color:darkgreen;font-weight: bold;"><img src="assets/images/t4.png" width="50" height="40">Success!!&nbsp;&nbsp;{{message}}</div>
+<div [hidden]="b" style="background-color:bisque;">
+    <h2 style="text-align: center;background-color: #EC1D1D;color: white;padding: 8px;margin-bottom: 0px;">USER DETAILS</h2>
+    <img src="assets/images/po.png" width="500" height="400" style="margin-left: 320px;">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="background-color: #1FD6DB;color: #E7EFEF;">User-ID</th>
+            <th style="background-color: #1FD6DB;color: #E7EFEF;">First Name</th>
+            <th style="background-color: #1FD6DB;color: #E7EFEF;">Last Name</th>
+            <th style="background-color: #1FD6DB;color: #E7EFEF;">Contact Number</th>
+            <th style="background-color: #1FD6DB;color:#E7EFEF;">Email ID</th>
+            <th style="background-color: #1FD6DB;color:#E7EFEF;">Department</th>
+            <th style="background-color: #1FD6DB;color: #E7EFEF;">Pin Code</th>
+            <th style="background-color: #1FD6DB;color: #E7EFEF;">City</th>
+            <th style="background-color: #1FD6DB;color: #E7EFEF;">Country</th>
+        </tr>
+    </thead>
+    <tbody style="background-color: #E6EEEE;">
+        <tr *ngFor="let user of users">
+            <th>{{user.userId}}</th>
+            <th>{{user.userFname}}</th>
+            <th>{{user.userLname}}</th>
+            <th>{{user.userContact}}</th>
+            <th>{{user.userEmail}}</th>
+            <th>{{user.userDepartment}}</th>
+            <th>{{user.userPinCode}}</th>
+            <th>{{user.userCity}}</th>
+            <th>{{user.userCountry}}</th>
+        </tr>
+    </tbody>
+</table>
+   </div>
+<div *ngIf="a">
+    <div class="alert alert-danger" style="margin-left: 200px;width: 700px;margin-top: 10px;font-size: 25px;color:red;font-weight: bold;"><img src="assets/images/cr2.png" width="50" height="40">Error!!&nbsp;&nbsp;{{message}}</div>
+</div>
+<div *ngIf="d">
+    <div class="alert alert-danger" style="margin-left: 200px;width: 700px;margin-top: 10px;font-size: 25px;color:red;font-weight: bold;"><img src="assets/images/cr2.png" width="50" height="40">Error!!&nbsp;&nbsp;{{loginMessage}}</div>
+</div>
+

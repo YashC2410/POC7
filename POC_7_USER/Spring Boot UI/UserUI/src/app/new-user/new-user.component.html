@@ -1,0 +1,41 @@
+<div style="width: 800px;margin-left: 200px;margin-top: 40px;background-color: #FFF0E1;" >
+<h3 style="text-align: center;background-color:black;color: white;padding: 8px;font-size: 36px;">ADD NEW USER</h3>
+<img src="assets/images/add1.png" style="margin-left: 180px;" width="450" height="400">
+<form (ngSubmit)="onSubmit()">
+    <div class="form-group"  style="margin-left: 140px;">
+        <div class="alert alert-danger" *ngIf='loginSucess' style="margin-left: -20px;width: 550px;margin-top: 10px;font-size: 24px;color: red;"><img src="assets/images/cr2.png" width="40" height="40">Error!!&nbsp;&nbsp;{{loginMessage}}</div>
+        <div class="alert alert-danger" *ngIf='usernull' style="margin-left: -20px;width: 550px;margin-top: 10px;"><img src="assets/images/cr2.png" width="40" height="40">{{userMessage}}</div>
+        <label for="firstName" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/na.png" width="60" height="60">&nbsp;&nbsp;First Name</label>
+        <input type="text" placeholder="Enter Your First Name" class="form-control" id="firstName" name="firstName" (keyup)="fname()" [(ngModel)]="user.userFname" style="width: 500px;">
+        <div class="alert alert-danger" *ngIf='lnamenull' style="margin-left: -20px;width: 550px;margin-top: 10px;"><img src="assets/images/cr2.png" width="40" height="40">{{lnameMessage}}</div>
+        <label for="lastName" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/ln.png" width="60" height="50">&nbsp;&nbsp;Last Name</label>
+        <input type="text"  placeholder="Enter Your Last Name" class="form-control" id="lastName" name="lastName" (keyup)="lname()" [(ngModel)]="user.userLname" style="width: 500px;">
+        <label for="contact" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/co.png" width="60" height="60">&nbsp;&nbsp;Contact Number</label>
+        <div class="alert alert-danger" *ngIf='contnull' style="margin-left: -20px;width: 550px;margin-top: 10px;"><img src="assets/images/cr2.png" width="40" height="40">{{conMessage}}</div>
+        <div class="alert alert-warning" *ngIf='consize' style="margin-left: -20px;width: 550px;margin-top: 10px;"><img src="assets/images/wn.png" width="40" height="40">{{csm}}</div>
+        <div class="alert alert-warning" *ngIf='co' style="margin-left: -20px;width: 550px;margin-top: 10px;"><img src="assets/images/wn.png" width="40" height="40">{{com}}</div>
+        <input type="text" placeholder="Enter Your Contact Number"  class="form-control" id="contact" name="contact" (keyup)="cont()" [(ngModel)]="user.userContact" style="width: 500px;">
+        <label for="email" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/em.png" width="60" height="60">&nbsp;&nbsp;Email ID</label>
+        <div class="alert alert-danger" *ngIf='emnull' style="margin-left: -20px;width: 550px;margin-top: 10px;"><img src="assets/images/cr2.png" width="40" height="40">{{emMessage}}</div>
+        <div class="alert alert-warning" *ngIf='emv'  style="margin-left: -20px;width: 550px;margin-top: 10px;"><img src="assets/images/wn.png" width="40" height="40">{{emvm}}</div>
+        <input type="text"  placeholder="Enter Your Email ID" class="form-control" id="email" name="email" (keyup)="eml()" [(ngModel)]="user.userEmail" style="width: 500px;">
+        <label for="dept" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/dp.png" width="60" height="60">&nbsp;&nbsp;Department Name</label>
+        <div class="alert alert-danger" *ngIf='dep' style="margin-left: -20px;width: 550px;margin-top: 10px;"><img src="assets/images/cr2.png" width="40" height="40">{{depm}}</div>
+        <div class="alert alert-warning" *ngIf='dv' style="margin-left: -20px;width: 550px;margin-top: 10px;"><img src="assets/images/wn.png" width="40" height="40">{{dvm}}</div>
+        <input type="text"  placeholder="Enter Your Department Name" class="form-control" id="dept" name="dept" (keyup)="dept()" [(ngModel)]="user.userDepartment" style="width: 500px;">
+        <label for="pincode" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/pin.png" width="60" height="60">&nbsp;&nbsp;Pin Code</label>
+        <div class="alert alert-danger" *ngIf='pin' style="margin-left: -20px;width: 550px;margin-top: 10px;"><img src="assets/images/cr2.png" width="40" height="40">{{pinm}}</div>
+        <div class="alert alert-warning" *ngIf='pv' style="margin-left: -20px;width: 550px;margin-top: 10px;"><img src="assets/images/wn.png" width="40" height="40">{{pvm}}</div>
+        <input type="text"  placeholder="Enter Your Pin-Code" class="form-control" id="pincode" (keyup)="pi()" name="pincode" [(ngModel)]="user.userPinCode" style="width: 500px;">
+        <label for="city" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/city.png" width="60" height="60">&nbsp;&nbsp;City</label>
+        <div class="alert alert-danger" *ngIf='city' style="margin-left: -20px;width: 550px;margin-top: 10px;"><img src="assets/images/cr2.png" width="40" height="40">{{citym}}</div>
+        <div class="alert alert-warning" *ngIf='cv' style="margin-left: -20px;width: 550px;margin-top: 10px;"><img src="assets/images/wn.png" width="40" height="40">{{cvm}}</div>
+        <input type="text" placeholder="Enter Your City Name" class="form-control" id="city" name="city" (keyup)="ci()" [(ngModel)]="user.userCity" style="width: 500px;">
+        <label for="country" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/cont.png" width="60" height="60">&nbsp;&nbsp;Country</label>
+        <div class="alert alert-danger" *ngIf='con' style="margin-left: -20px;width: 550px;margin-top: 10px;"><img src="assets/images/cr2.png" width="40" height="40">{{conm}}</div>
+        <div class="alert alert-warning" *ngIf='cov' style="margin-left: -20px;width: 550px;margin-top: 10px;"><img src="assets/images/wn.png" width="40" height="40">{{covm}}</div>
+        <input type="text"  placeholder="Enter Your Country Name" class="form-control" id="country" (keyup)="cony()" name="country" [(ngModel)]="user.userCountry" style="width: 500px;">
+    </div>
+    <button class="btn btn-success" type="submit" style="width: 500px;margin-left: 140px;margin-top:20px;padding: 7px;font-weight: bold;font-size: 21px;">Add User</button>
+</form>
+</div>

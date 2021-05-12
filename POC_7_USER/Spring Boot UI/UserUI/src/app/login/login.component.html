@@ -1,0 +1,24 @@
+<div style="width: 600px;margin-left: 300px;background-color: #D4FEF9;">
+    <h1 class="text-center" style="background-color: #C61501;color: white;margin-top: 20px;">ADMIN LOGIN</h1>
+      <div style="width: 500px;margin-left: 50px;margin-top: 20px;">
+        <img src="assets/images/log.png" style="margin-left: 70px" width="350" height="300">
+        <form class="form-group" style="margin-top: 20px;">
+            <div class="alert alert-info" style="text-align: center;" *ngIf='wel'>{{welcome}}</div>
+          <div class="alert alert-danger" *ngIf='invalidLogin'><img src="assets/images/cr2.png" width="40" height="40">{{errorMessage}}</div>
+          <div class="alert alert-danger" *ngIf='usernull'><img src="assets/images/cr2.png" width="40" height="40">{{userMessage}}</div>
+          <div class="alert alert-danger" *ngIf='passnull'><img src="assets/images/cr2.png" width="40" height="40">{{passMessage}}</div>
+          <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
+          <div class="form-group">
+            <label for="email" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/un.png" width="60" height="50">&nbsp;&nbsp;Admin User Name :</label>
+            <input type="text" class="form-control" (keyup)="en1()" id="username" [(ngModel)]="username" placeholder="Enter User Name"
+              name="username">
+          </div>
+          <div class="form-group">
+            <label for="pwd" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/pass.png" width="60" height="50">&nbsp;&nbsp;Admin Password:</label>
+            <input type="password" class="form-control" (keyup)="en()" [(ngModel)]="password" id="password" placeholder="Enter password"
+              name="password">
+          </div>
+          <button (click)=Login() class="btn btn-success" style="width: 320px;margin-left: 100px;margin-top:20px;padding: 7px;font-weight: bold;font-size: 21px;">Login</button>
+        </form>
+      </div>
+      </div>

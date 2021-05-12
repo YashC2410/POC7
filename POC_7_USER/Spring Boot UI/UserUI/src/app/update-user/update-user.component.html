@@ -1,0 +1,26 @@
+<div style="width: 800px;margin-left: 200px;margin-top: 40px;background-color: #F4EEDF" >
+    <h3 style="text-align: center;background-color:black;color: white;padding: 8px;font-size: 36px;">UPDATE USER</h3>
+    <img src="assets/images/up1.png" style="margin-left: 200px;margin-top: 10px;" width="450" height="350">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group" style="width:600px;margin-left: 110px;">
+            <label for="firstName" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/na.png" width="60" height="60">&nbsp;&nbsp;First Name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="user.userFname">
+            <label for="lastName" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/ln.png" width="60" height="50">&nbsp;&nbsp;Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="user.userLname">
+            <label for="contact" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/co.png" width="60" height="60">&nbsp;&nbsp;Contact Number</label>
+            <input type="text" class="form-control" id="contact" name="contact" [(ngModel)]="user.userContact">
+            <label for="email" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/em.png" width="60" height="60">&nbsp;&nbsp;Email ID</label>
+            <input type="text" class="form-control" id="email" name="email" [(ngModel)]="user.userEmail">
+            <label for="dept" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/dp.png" width="60" height="60">&nbsp;&nbsp;Department Name</label>
+            <input type="text" class="form-control" id="dept" name="dept" [(ngModel)]="user.userDepartment">
+            <label for="pincode" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/pin.png" width="60" height="60">&nbsp;&nbsp;Pin Code</label>
+            <input type="text" class="form-control" id="pincode" name="pincode" [(ngModel)]="user.userPinCode">
+            <label for="city" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/city.png" width="60" height="60">&nbsp;&nbsp;City</label>
+            <input type="text" class="form-control" id="city" name="city" [(ngModel)]="user.userCity">
+            <label for="country" style="margin-top:10px;font-weight: bold;font-size: 18px;"><img src="assets/images/cont.png" width="60" height="60">&nbsp;&nbsp;Country</label>
+            <input type="text" class="form-control" id="country" name="country" [(ngModel)]="user.userCountry">
+        </div>
+        <button class="btn btn-success" type="submit" style="width: 500px;margin-left: 150px;margin-top:20px;padding: 7px;font-weight: bold;font-size: 21px;">Update User</button>
+    </form>
+    </div>
+    

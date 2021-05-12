@@ -1,0 +1,36 @@
+
+<h1 style="text-align: center;color: white;background-color: #FB871A;padding: 8px;width: 1200px;">USER DETAILS</h1>
+<div class="alert alert-danger" *ngIf='login' style="margin-left: 40px;width: 1100px;margin-top: 10px;font-size: 24px;font-weight:bold;color: red;"><img src="assets/images/cr2.png" width="40" height="40">Error!!&nbsp;&nbsp;{{loginMessage}}</div>
+<table class="table table-striped" border="1">
+    <thead>
+        <tr>
+            <th style="background-color: #5A97CE;color: white;">User-ID</th>
+            <th style="background-color: #5A97CE;color: white;">First Name</th>
+            <th style="background-color: #5A97CE;color: white;">Last Name</th>
+            <th style="background-color: #5A97CE;color: white;">Contact Number</th>
+            <th style="background-color: #5A97CE;color: white;">Email ID</th>
+            <th style="background-color: #5A97CE;color: white;">Department</th>
+            <th style="background-color: #5A97CE;color: white;">Pin Code</th>
+            <th style="background-color: #5A97CE;color: white;">City</th>
+            <th style="background-color: #5A97CE;color: white;">Country</th>
+            <th style="background-color: #5A97CE;color: white;">Update User</th>
+            <th style="background-color: #5A97CE;color: white;">Delete User</th>
+        </tr>
+    </thead>
+    <tbody style="background-color:beige">
+        <tr *ngFor="let user of users">
+            <th>{{user.userId}}</th>
+            <th>{{user.userFname}}</th>
+            <th>{{user.userLname}}</th>
+            <th>{{user.userContact}}</th>
+            <th>{{user.userEmail}}</th>
+            <th>{{user.userDepartment}}</th>
+            <th>{{user.userPinCode}}</th>
+            <th>{{user.userCity}}</th>
+            <th>{{user.userCountry}}</th>
+            <td><button class="btn btn-success" (click)="update(user.userId)">Update</button></td>
+            <td><button class="btn btn-danger" (click)="delete(user.userId)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+
